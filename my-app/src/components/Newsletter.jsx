@@ -1,6 +1,8 @@
 
+import { Send } from "@material-ui/icons";
 import styled from "styled-components"
-import SendIcon from '@mui/icons-material/Send';
+import { mobile } from "../responsive";
+
 
 const Container = styled.div`
 height: 60vh;
@@ -19,6 +21,7 @@ const Desc = styled.div`
 font-size: 24px;
 font-weight: 300;
 margin-bottom: 20px;
+${mobile({ textAlign: "center" })}
 
 `;
 
@@ -29,7 +32,7 @@ background-color: white;
 display: flex;
 justify-content: space-between;
 border: 1px solid lightgray;
-
+${mobile({ width: "80%" })}
 `;
 
 const Input = styled.input`
@@ -53,7 +56,7 @@ const Newsletter = () => {
             <InputContainer>
                 <Input placeholder="Your email" />
                 <Button>
-                    <SendIcon />
+                    <Send />
                 </Button>
             </InputContainer>
         </Container>

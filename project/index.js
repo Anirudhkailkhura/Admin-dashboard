@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGO_URL)
 
   app.use(
     cors({
-      origin: "*",
+      origin: "*"
     })
   )
 
@@ -36,6 +36,12 @@ app.use("/api/orders", orderRoute);
 
 
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log("Backend server is running!");
+const port = process.env.PORT || 5000;
+
+
+
+// ...Express setup code...
+
+app.listen(port, () => {
+    console.log(`App listening at http://localhost:${port}`);
 });

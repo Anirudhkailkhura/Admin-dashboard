@@ -1,17 +1,17 @@
 
 
 import styled from "styled-components"
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { sliderItems } from "../data";
 import { useState } from "react";
-
+import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
+import { mobile } from "../responsive";
 const Container = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
   position: relative;
   overflow: hidden ;
+  ${mobile({ display: "none" })}
   `
 const Arrow = styled.div`
     width: 50px;
@@ -94,7 +94,7 @@ const Slider = () => {
   return (
     <Container>
       <Arrow direction="left" onClick={() => handleClick("left")} >
-        < ArrowBackIosIcon />
+        < ArrowBackIos />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => (
@@ -112,7 +112,7 @@ const Slider = () => {
       </Wrapper>
 
       <Arrow direction="right" onClick={() => handleClick("right")}>
-        <ArrowForwardIosIcon />
+        <ArrowForwardIos />
       </Arrow>
     </Container>
   )
